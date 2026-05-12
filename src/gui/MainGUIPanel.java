@@ -1,6 +1,8 @@
 package gui;
 
 import function.MusicPlayerFunction;
+import function.validator.AudioFormatValidator;
+import function.validator.DefaultAudioFormatValidator;
 import custom_component.*;
 
 import javax.swing.*;
@@ -9,6 +11,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.util.Objects;
 
 public class MainGUIPanel extends JPanel {
   // Arch of the Component var (final)
@@ -32,6 +35,7 @@ public class MainGUIPanel extends JPanel {
 
   // Song Slider Var
   private MusicPlayerFunction audioPlayer;
+  private final AudioFormatValidator audioFormatValidator;
   private HalfRoundedPanel bgPanel;
   private CustomJSlider songSlider;
   private JLabel songTimeStamp;
@@ -264,7 +268,7 @@ public class MainGUIPanel extends JPanel {
 
       if (songList != null) {
         for (File file : songList) {
-          if (file.isFile() && file.getName().endsWith(".mp3")) {
+          if (audioFormatValidator.isSupported(file)) {
             return true;
           }
         }
@@ -275,7 +279,12 @@ public class MainGUIPanel extends JPanel {
   }
 
   public MainGUIPanel(JFrame parent) {
+    this(parent, new DefaultAudioFormatValidator());
+  }
+
+  public MainGUIPanel(JFrame parent, AudioFormatValidator audioFormatValidator) {
     this.parent = parent;
+    this.audioFormatValidator = Objects.requireNonNull(audioFormatValidator);
     setLayout(groupLay);
     setOpaque(false);
 
