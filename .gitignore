@@ -24,6 +24,9 @@ bin/
 
 ### VS Code ###
 .vscode/
+.codex
+.chatgpt
+/docs/
 
 ### Mac OS ###
 .DS_Store

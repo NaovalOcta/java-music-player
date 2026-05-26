@@ -40,7 +40,7 @@ public class MainGUIPanel extends JPanel {
   private CustomJSlider songSlider;
   private JLabel songTimeStamp;
   private JLabel songEnd;
-  private String getAbsoluteSongPath = "";
+  String getAbsoluteSongPath = "";
 
   // Song Metadata Var
   private JLabel albumImage;
@@ -258,7 +258,7 @@ public class MainGUIPanel extends JPanel {
     return upperPanel;
   }
 
-  private boolean isValidSongFolder() {
+  boolean isValidSongFolder() {
     File songFolder = new File(getAbsoluteSongPath);
 
     // System.out.println("songFolder.exists(): " + songFolder.exists());

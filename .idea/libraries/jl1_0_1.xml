@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/lib/jaudiotagger-3.0.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jl1.0.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsvg-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-platform-console-standalone-1.10.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mp3agic-0.9.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/svgSalamander.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/TarsosDSP-latest-bin.jar!/" />
